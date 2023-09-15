@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-
 import Link from "next/link";
 import Metamask from "../components/metamask";
-import Coffee from "../components/coffee";
+import BuyCoffee from "../components/buyCoffee";
+import MemmosList from "../components/memmosList";
 
 const Index = () => {
   const [haveMetamask, sethaveMetamask] = useState(true);
@@ -36,7 +36,7 @@ const Index = () => {
       const { ethereum } = window;
 
       if (!ethereum) {
-        console.log("Metamask not detected");
+        alert("Metamask not detected");
         return;
       }
 
@@ -49,7 +49,7 @@ const Index = () => {
         address: accounts[0],
       });
     } catch (error) {
-      console.log("Error connecting to metamask", error);
+      alert("Error connecting to metamask", error);
     }
   };
 
@@ -103,7 +103,8 @@ const Index = () => {
               <>
                 <br />
                 <h2>You're connected ✅</h2>
-                <Coffee client={client} />
+                <BuyCoffee client={client} />
+                <MemmosList />
               </>
             ) : (
               <>

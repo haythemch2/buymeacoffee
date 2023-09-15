@@ -2,7 +2,7 @@ import React from "react";
 import abi from '../artifacts/contracts/BuyMeACoffee.sol/BuyMeACoffee.json';
 import { ethers } from "ethers";
 
-const Coffee = ({client}) => {
+const BuyCoffee = ({client}) => {
     const contractAddress = "0xd8678bA2e80fAAAFEcE847F94A3eD585779DBb99";
     const contractABI = abi.abi;
 
@@ -51,4 +51,4 @@ const Coffee = ({client}) => {
   );
 };
 
-export default Coffee;
+export default BuyCoffee;
